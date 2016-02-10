@@ -50,5 +50,4 @@ Enter a i value.
 3
 def square :: 9.0
 
- 
 */
