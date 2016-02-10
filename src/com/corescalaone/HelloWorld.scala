@@ -33,3 +33,22 @@ object HelloWorld {
   println("def quadrant :: " + quadrant(x, y))
 
 }
+
+
+/*
+
+OUTPUT
+
+
+Enter an x-coordinate. 
+1
+Enter an y-coordinate. 
+2
+def multiple :: 2
+def quadrant :: 1
+Enter a i value. 
+3
+def square :: 9.0
+
+ 
+*/
