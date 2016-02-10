@@ -1,0 +1,2 @@
+# CoreScalaOne
+Core Scala concepts
