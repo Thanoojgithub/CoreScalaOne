@@ -55,3 +55,28 @@ class Point(xc: Int, yc: Int) {
   }
   override def toString(): String = "(" + x + ", " + y + ")";
 }
+
+
+
+
+
+/*
+OUTPUT
+
+CoreOne!
+0th element is: 1
+1th element is: 2
+2th element is: 3
+1
+2
+3
+listOne :List(1, 2, 3)
+(1, 2)
+(11, 12)
+(1, 0)
+(11, 10)
+(0, 0)
+(10, 10)
+
+
+*/
