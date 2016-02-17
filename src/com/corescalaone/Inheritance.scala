@@ -5,25 +5,40 @@ trait Animal {
 }
 
 trait Mammal extends Animal {
-  override def print(s: String): String = { s + " - Mammal" }
+  override def print(animal: String): String = { animal + " - Mammal" }
+  def print(): String = { "mammalLocally" }
 }
 
 trait Reptile extends Animal {
-  override def print(s: String): String = { s + " - Reptile" }
+  override def print(animal: String): String = { animal + " - Reptile" }
+  def print(): String = { "reptileLocally" }
 }
 
-class MammalOrReptile extends Reptile with Mammal
+class MammalOrReptile extends Reptile with Mammal {
+  override def print(): String = { "mammalOrReptile" }
+}
 
-class ReptileOrMammal extends Mammal with Reptile
+class ReptileOrMammal extends Mammal with Reptile {
+  override def print(): String = { "reptileOrMammal" }
+}
 
-class AnimalLocal extends Mammal with Reptile {
-  def hello() = print("Animal Locally")
-  override def print(s: String): String = { s }
+class AnimalLocalMR extends Mammal with Reptile {
+  def animalLocally() = print("Animal Locally")
+  override def print(animalLocally: String): String = { super.print(); animalLocally }
+  override def print(): String = { super.print(); }
+}
+
+class AnimalLocalRM extends Reptile with Mammal  {
+  def animalLocally() = print("Animal Locally")
+  override def print(animalLocally: String): String = { super.print(); animalLocally }
+  override def print(): String = { super.print(); }
 }
 
 object Inheritance {
 
   def main(args: Array[String]): Unit = {
+
+    //multiple inheritance
     val mammal = new Mammal {}
     println(mammal.print("Elephant"));
 
@@ -36,14 +51,20 @@ object Inheritance {
     val reptileOrMammal = new ReptileOrMammal
     println(reptileOrMammal.print("Turtle"))
 
-    val animalLocal = new AnimalLocal
-    println(animalLocal.hello)
-    println(animalLocal.print("Animal Locally"))
+    val animalLocallyMR = new AnimalLocalMR
+    println(animalLocallyMR.animalLocally)
+    println(animalLocallyMR.print("Animal Locally MR"))
+    println(animalLocallyMR.print())
+    
+    val animalLocallyRM = new AnimalLocalRM
+    println(animalLocallyRM.animalLocally)
+    println(animalLocallyRM.print("Animal Locally RM"))
+    println(animalLocallyRM.print())
 
     // object reference as argument 
     val fooWithBar = new FooWithBar
     val fooBar = new FooBar with Foo with Bar
-    fooWithBar.bazFooBar(fooBar)
+    fooWithBar.fooWithBar(fooBar)
   }
 }
 
@@ -57,7 +78,7 @@ class FooBar extends Foo with Bar {
 }
 
 class FooWithBar {
-  def bazFooBar(fooBar: FooBar with Foo with Bar) {
+  def fooWithBar(fooBar: FooBar with Foo with Bar) {
     fooBar.foo("foo")
     fooBar.bar("bar")
   }
@@ -68,15 +89,17 @@ class FooWithBar {
 OUTPUT
 ------
 
-
 Elephant - Mammal
 Turtle - Reptile
 Elephant - Mammal
 Turtle - Reptile
 Animal Locally
+Animal Locally MR
+reptileLocally
 Animal Locally
+Animal Locally RM
+mammalLocally
 Hello, foo!
 Hello, bar!
-
 
 */
