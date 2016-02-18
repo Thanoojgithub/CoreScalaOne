@@ -1,5 +1,29 @@
-/*
+/**
  * http://booksites.artima.com/programming_in_scala_2ed/examples/index.html
+ * https://twitter.github.io/scala_school/
+ * https://dzone.com/articles/revealing-scala-magician%E2%80%99s
+ *
+ * Why Scala?
+ * Expressive
+ * First-class functions
+ * Closures
+ * Concise
+ * Type inference
+ * Literal syntax for function creation
+ * Java interoperability
+ * Can reuse java libraries
+ * Can reuse java tools
+ * No performance penalty
+ *
+ *
+ *
+ * How Scala?
+ * Compiles to java bytecode
+ * Works with any standard JVM
+ * Or even some non-standard JVMs like Dalvik
+ * Scala compiler written by author of Java compiler
+ *
+ *
  */
 package com.corescalaone
 
@@ -8,6 +32,20 @@ import scala.collection.mutable.ListBuffer
 object CoreOne {
   def main(args: Array[String]): Unit = {
     println("CoreOne!")
+
+    val itoInt: Int = "123".toInt
+    println(itoInt)
+
+    val colors = List("blue", "yellow", "red")
+    val colorsToArray = colors.toArray
+    println(colorsToArray.length)
+    colorsToArray.foreach(println(_))
+
+    val range10To20By3 = 10.to(20).by(3)
+    println(range10To20By3)
+    // Use toList to convert a range to a list.
+    val list10To20By3 = range10To20By3.toList
+    println(list10To20By3)
 
     val ptOne = new Point(1, 2)
     println(ptOne)
@@ -25,13 +63,25 @@ object CoreOne {
     println(ptThree)
 
     // List - scala.collection.immutable.List
-    listOperations()
+   // listOperations()
 
     //Set - scala.collection.immutable.Set
-    setOperations()
+    //setOperations()
 
     // Map - collection.mutable.Map
-    mapOperations()
+   // mapOperations()
+
+    val vectorOne = for (i <- 1 to 5) yield i
+    println(vectorOne)
+    val vectorTwo = for (e <- vectorOne) yield e
+    println(vectorTwo)
+    
+    def adder(m: Int, n: Int) = m + n
+    println(adder(10,20))
+    //Partial application
+    val addPartial = adder(2, _:Int)
+    println(addPartial(20))
+    
   }
 
   /**

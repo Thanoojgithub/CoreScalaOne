@@ -28,7 +28,7 @@ class AnimalLocalMR extends Mammal with Reptile {
   override def print(): String = { super.print(); }
 }
 
-class AnimalLocalRM extends Reptile with Mammal  {
+class AnimalLocalRM extends Reptile with Mammal {
   def animalLocally() = print("Animal Locally")
   override def print(animalLocally: String): String = { super.print(); animalLocally }
   override def print(): String = { super.print(); }
@@ -55,7 +55,7 @@ object Inheritance {
     println(animalLocallyMR.animalLocally)
     println(animalLocallyMR.print("Animal Locally MR"))
     println(animalLocallyMR.print())
-    
+
     val animalLocallyRM = new AnimalLocalRM
     println(animalLocallyRM.animalLocally)
     println(animalLocallyRM.print("Animal Locally RM"))
@@ -103,3 +103,10 @@ Hello, foo!
 Hello, bar!
 
 */
+
+
+/**
+ * NOTE :
+ *Under the hood, there are other differences between functions and methods. Generally, a plain method generated less overhead than a function (which technically is an object with an apply method).
+ *However, if you try not to care about those differences and think of def, val and var as fields with different semantics, then it’s simply that def evaluates every time it gets called while val evaluates only once.
+ */
