@@ -51,7 +51,12 @@ object Inheritance {
     val reptileOrMammal = new ReptileOrMammal
     println(reptileOrMammal.print("Turtle"))
 
-    val animalLocallyMR = new AnimalLocalMR
+    var animalLocallyMR = new AnimalLocalMR with Reptile with Mammal
+    println(animalLocallyMR.animalLocally)
+    println(animalLocallyMR.print("Animal Locally MR"))
+    println(animalLocallyMR.print())
+    
+    animalLocallyMR = new AnimalLocalMR
     println(animalLocallyMR.animalLocally)
     println(animalLocallyMR.print("Animal Locally MR"))
     println(animalLocallyMR.print())

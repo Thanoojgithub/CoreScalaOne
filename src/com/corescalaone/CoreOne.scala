@@ -61,7 +61,8 @@ object CoreOne {
     println(ptThree)
     ptThree.move(10, 10)
     println(ptThree)
-
+    
+    
     // List - scala.collection.immutable.List
    // listOperations()
 
@@ -275,6 +276,14 @@ class Point(xc: Int, yc: Int) {
 }
 
 
+/**
+ * Singleton Object -
+ * Methods and values that aren’t associated with individual instances of a class belong in singleton objects, denoted by using the keyword object instead of class.
+ * This sum method is available globally, and can be referred to, or imported, as com.corescalaone.SumOfList.
+ */
+object SumOfList {
+def sum(list: List[Int]): Int = list.sum
+}
 
 
 
