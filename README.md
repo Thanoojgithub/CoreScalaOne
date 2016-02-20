@@ -2,4 +2,4 @@
 Core Scala concepts
 
 
-https://gist.github.com/Thanooj/92694321347aa02e9e15
+https://gist.github.com/Thanoojgithub/92694321347aa02e9e15
