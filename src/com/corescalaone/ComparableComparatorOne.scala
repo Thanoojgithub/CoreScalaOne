@@ -14,11 +14,15 @@ object ComparableComparatorOne {
     val authorList = getListOfAuthorsFromFile(afile)
 
     authorList.foreach { println }
+    sortOnAuthorList(authorList)
+  }
 
+  def sortOnAuthorList(authorList: MutableList[Author]): Unit = {
     println("-----------------authorList.sorted-----------------------------------  ")
     authorList.sorted.foreach { println }
     println("-----------------authorList.reverse----------------------------------  ")
     authorList.reverse.foreach { println }
+
     println("-----------------sortWith------_.compareTo(_) < 0--------------------  ")
     authorList.sortWith(_.compareTo(_) < 0).foreach { println }
     println("-----------------sortWith------_.compareTo(_) > 0--------------------  ")
@@ -46,7 +50,6 @@ object ComparableComparatorOne {
     authorList.sorted(orderingByLocation).foreach { println }
     println("--Ordering.by(e => (e.location, e.name, e.id)-orderingByNameThenLocation- ")
     authorList.sorted(orderingByNameThenLocationThanId).foreach { println }
-
   }
 
   def getListOfAuthorsFromFile(afile: java.io.File): MutableList[Author] = {
