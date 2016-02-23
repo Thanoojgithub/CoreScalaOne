@@ -1,11 +1,11 @@
 package com.corescalaone
 
-import scala.io.Source
-import scala.collection.mutable.ListBuffer
-import scala.collection.mutable.MutableList
 import java.io.File
-import java.io.IOException
 import java.io.FileNotFoundException
+import java.io.IOException
+
+import scala.collection.mutable.MutableList
+import scala.io.Source
 
 object ComparableOne {
 
@@ -13,7 +13,10 @@ object ComparableOne {
     // FileNotFoundException : java.io.FileNotFoundException: Authors.csv (The system cannot find the file specified)
     val afile: java.io.File = new File("D:/thanooj/work/Workspaces/WSscala/WSOne/CoreScalaNew/resources/Authors.csv")
 
-    loadAuthorsFromFile(afile).foreach { println }
+    val authorList = loadAuthorsFromFile(afile)
+    authorList.foreach { println }
+    println("-----------------authorList.sorted-----------------------")
+    authorList.sorted.foreach { println }
   }
 
   def loadAuthorsFromFile(afile: java.io.File): MutableList[Author] = {
@@ -33,19 +36,6 @@ object ComparableOne {
     }
     authorList
   }
-}
-
-class Author(val id: Int, val name: String, val location: String) extends Comparable[Author] {
-  override def compareTo(that: Author) = {
-    val nameComp = this.name compareTo that.name
-    if (nameComp != 0) nameComp
-    else {
-      val locationComp = this.location compareTo that.location
-      if (locationComp != 0) locationComp
-      else this.id compareTo that.id
-    }
-  }
-  override def toString() = id + " " + name + " " + location
 }
 
 
