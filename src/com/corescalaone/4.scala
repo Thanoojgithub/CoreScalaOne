@@ -1,6 +1,6 @@
 package com.corescalaone
 
-object ClassObject {
+object ClassCaseClassObject {
 
   //The Application trait
   def main(args: Array[String]): Unit = {
@@ -10,11 +10,16 @@ object ClassObject {
     ChecksumAccumulator.addObj(1)
     println("sum : " + checksumAccumulator.getSum)
     println("a : " + A.run)
+
+    val classOne: ClassOne = new ClassOne(1, "ram", "ayodhya")
+    println(classOne.getIdIns)
+    val classTwo: ClassTwo = new ClassTwo(2, "seeta", "midhila")
+    println(classTwo.id)
   }
 }
 
 object ClassObjectApp extends scala.App {
-  
+
   val checksumAccumulator: ChecksumAccumulator = new ChecksumAccumulator()
   checksumAccumulator.add(1)
   ChecksumAccumulator.add(checksumAccumulator, 1)
@@ -50,3 +55,19 @@ class A {
 object A extends A {
   def run = { (A: A).a = true; (A: A).a }
 }
+
+class ClassOne(id: Int, name: String, location: String) {
+  private var idIns: Int = id
+  def getIdIns(): Int = this.idIns
+  def setIdIns_(idIns: Int): Unit = this.idIns = idIns
+}
+case class ClassTwo(id: Int, name: String, location: String)
+
+
+/**
+ * OUTPUT
+ * sum : 2
+ * a : true
+ * 1
+ * 2
+ */

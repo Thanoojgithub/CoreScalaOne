@@ -20,12 +20,12 @@ trait CommandoBridge extends Spacecraft {
       println("inside loop engage")
       speedUp()
     }
-    "engage loop for 3 times"
+    return "engage loop for 3 times"
   }
   def speedUp(): Int
 }
 
-trait PulseEngine extends Spacecraft {
+trait PulseEngine extends Spacecraft with CommandoBridge{
   val maxPulse: Int
   var currentPulse: Int
   def speedUp(): Int = {
@@ -38,7 +38,7 @@ trait PulseEngine extends Spacecraft {
   }
 }
 
-class StarCruiser(mp: Int, cp: Int) extends Spacecraft with CommandoBridge with PulseEngine {
+class StarCruiser(mp: Int, cp: Int) extends Spacecraft with PulseEngine {
   val maxPulse = mp
   var currentPulse = cp
 }
