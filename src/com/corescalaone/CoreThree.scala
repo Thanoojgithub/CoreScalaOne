@@ -46,50 +46,74 @@ object CoreThree {
 
     //Case Classes
     val summation = new Summation(20, 10)
-    println(ArithmaticCaseClass.doArithmatic(summation))
+    val summationDoArithmatic: Arithmatic = ArithmaticCaseClass.doArithmatic(summation)
+    println(summationDoArithmatic.doArithmatic)
     val multiplication = new Multiplication(20, 10)
-    ArithmaticCaseClass.doArithmatic(multiplication)
+    val multiplicationDoArithmatic: Arithmatic = ArithmaticCaseClass.doArithmatic(multiplication)
+    println(multiplicationDoArithmatic.doArithmatic)
     val division = new Division(20, 10)
-    ArithmaticCaseClass.doArithmatic(division)
+    val divisionDoArithmatic: Arithmatic = ArithmaticCaseClass.doArithmatic(division)
+    println(divisionDoArithmatic.doArithmatic)
     val subtraction = new Subtraction(20, 10)
-    ArithmaticCaseClass.doArithmatic(subtraction)
+    val subtractionDoArithmatic: Arithmatic = ArithmaticCaseClass.doArithmatic(subtraction)
+    println(subtractionDoArithmatic.doArithmatic)
   }
 }
 
 /**
  * Case Classes
+ * Scala supports the notion of case classes. Case classes are regular classes which export their constructor parameters
+ * The constructor parameters of case classes are treated as public values and can be accessed directly.
+ * It only makes sense to define case classes if pattern matching is used to decompose data structures.
  */
-abstract class Arithmatic
+abstract class Arithmatic {
+  def doArithmatic: Long
+}
 case class Summation(x: Int, y: Int) extends Arithmatic {
-  def summation(x: Int, y: Int): Long = {
+  def doArithmatic(): Long = {
+    println("Summation")
     x + y
   }
 }
 case class Multiplication(x: Int, y: Int) extends Arithmatic {
-  def multiplication(x: Int, y: Int): Long = {
+  def doArithmatic(): Long = {
     x * y
   }
 }
 case class Division(x: Int, y: Int) extends Arithmatic {
-  def division(x: Int, y: Int): Long = {
+  def doArithmatic(): Long = {
     x / y
   }
 }
 case class Subtraction(x: Int, y: Int) extends Arithmatic {
-  def subtraction(x: Int, y: Int): Long = {
+  def doArithmatic(): Long = {
     x - y
   }
 }
 
 object ArithmaticCaseClass {
-  var result: Any = 0.0
-  def doArithmatic(arithmatic: Arithmatic): Any = {
+  var result: Arithmatic = null
+  def doArithmatic(arithmatic: Arithmatic): Arithmatic = {
     arithmatic match {
-      case Summation(x, y)      => { result = x + y }
-      case Multiplication(x, y) => { result = x * y }
-      case Division(x, y)       => { result = x / y }
-      case Subtraction(x, y)    => { result = x - y }
+      case Summation(x, y)      => { result = new Summation(x, y) }
+      case Multiplication(x, y) => { result = new Multiplication(x, y) }
+      case Division(x, y)       => { result = new Division(x, y) }
+      case Subtraction(x, y)    => { result = new Subtraction(x, y) }
     }
     result
   }
+
+  def matchInt(x: Int): Unit = x match {
+    case 1 => println("one")
+    case 2 => println("two")
+    case _ => println("many")
+  }
+  def matchAny(x: Any): Any = x match {
+    case 1      => "one"
+    case "two"  => 2
+    case y: Int => "scala.Int"
+  }
+  matchInt(3)
+  println(matchAny("two"))
+
 }

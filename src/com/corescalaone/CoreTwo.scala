@@ -31,8 +31,9 @@ object CoreTwo {
     array = array.sorted
     array.foreach { println }
     //2
-    var randomArray = for (i <- 1 to 5) yield Random.nextInt(100)
+    var randomArray = for (i <- 1 to 5) yield if (i != 3) { Random.nextInt(100) } else 0
     randomArray = randomArray.sorted
+
     randomArray.foreach { println }
     //3
     var arr = new Array[Int](5)
@@ -52,6 +53,12 @@ object CoreTwo {
 
     for (i <- 0 until arr2.length) arr2(i) = (Random.nextInt(100))
     arr2 = arr2.sorted
+    val nums = arr2.partition(x => x % 2 == 0)
+    val evenNums = nums._1
+    val oldNum = nums._2
+    println("evenNums : "+evenNums.toList)
+    println("oldNum : "+oldNum.toList)
+    
     println(arr2.foreach { println })
     for (i <- 0 to arr2.length - 1) {
       if (arr2(i) % 2 == 0) evenListOne.:+=(arr2(i)) else oddListOne.:+=(arr2(i))

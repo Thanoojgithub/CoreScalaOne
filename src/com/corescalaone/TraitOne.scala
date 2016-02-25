@@ -1,5 +1,6 @@
 package com.corescalaone
 
+//object TraitOne (a : Int) - traits or objects may not have parameters
 object TraitOne {
   def main(args: Array[String]): Unit = {
 
@@ -8,8 +9,8 @@ object TraitOne {
     println(starCruiser.speedUp)
   }
 }
-
-abstract class Spacecraft {
+//traits or objects may not have parameters
+trait Spacecraft {
   def engage(): String
 }
 
@@ -25,7 +26,7 @@ trait CommandoBridge extends Spacecraft {
   def speedUp(): Int
 }
 
-trait PulseEngine extends Spacecraft with CommandoBridge{
+trait PulseEngine extends CommandoBridge {
   val maxPulse: Int
   var currentPulse: Int
   def speedUp(): Int = {
@@ -38,7 +39,7 @@ trait PulseEngine extends Spacecraft with CommandoBridge{
   }
 }
 
-class StarCruiser(mp: Int, cp: Int) extends Spacecraft with PulseEngine {
+class StarCruiser(mp: Int, cp: Int) extends PulseEngine {
   val maxPulse = mp
   var currentPulse = cp
 }

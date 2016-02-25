@@ -63,6 +63,28 @@ class ClassOne(id: Int, name: String, location: String) {
 }
 case class ClassTwo(id: Int, name: String, location: String)
 
+/**
+ * Scope of protection
+ */
+class SuperClass {
+  private[corescalaone] var secretsOfCorescalaone: String = "secretsOfCorescalaone"
+  protected[corescalaone] def scopeOfProtection() { println("scopeOfProtection") }
+  private[this] var secrets: String = "this-secrets"
+}
+class SubClass extends SuperClass {
+  scopeOfProtection()
+  /**
+   * val subClass : SubClass = new SubClass
+   * subClass.secrets // value secrets is not a member of com.corescalaone.SubClass
+   */
+
+}
+class Other {
+  val superClass: SuperClass = new SuperClass
+  superClass.scopeOfProtection() // Error: if fn is not accessible with out Scope of protection
+  // superClass.secrets ERROR
+}
+
 
 /**
  * OUTPUT

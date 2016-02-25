@@ -1,5 +1,8 @@
 package com.corescalaone
 
+import scala.io.Source
+import java.util.Comparator
+
 trait Animal {
   def print(s: String): String
 }
@@ -23,15 +26,15 @@ class ReptileOrMammal extends Mammal with Reptile {
 }
 
 class AnimalLocalMR extends Mammal with Reptile {
-  def animalLocally() = print("Animal Locally")
+  def animalLocally() = print("AnimalLocalMR extends Mammal with Reptile")
   override def print(animalLocally: String): String = { super.print(); animalLocally }
-  override def print(): String = { super.print(); }
+  override def print(): String = { super.print() }
 }
 
 class AnimalLocalRM extends Reptile with Mammal {
-  def animalLocally() = print("Animal Locally")
+  def animalLocally() = print("AnimalLocalRM extends Reptile with Mammal")
   override def print(animalLocally: String): String = { super.print(); animalLocally }
-  override def print(): String = { super.print(); }
+  override def print(): String = { super.print() }
 }
 
 object Inheritance {
@@ -55,7 +58,7 @@ object Inheritance {
     println(animalLocallyMR.animalLocally)
     println(animalLocallyMR.print("Animal Locally MR"))
     println(animalLocallyMR.print())
-    
+
     animalLocallyMR = new AnimalLocalMR
     println(animalLocallyMR.animalLocally)
     println(animalLocallyMR.print("Animal Locally MR"))
@@ -70,6 +73,9 @@ object Inheritance {
     val fooWithBar = new FooWithBar
     val fooBar = new FooBar with Foo with Bar
     fooWithBar.fooWithBar(fooBar)
+
+    val loc = new LocationXY(10, 20, 15);
+    loc.move(10, 10, 5);
   }
 }
 
@@ -88,6 +94,38 @@ class FooWithBar {
     fooBar.bar("bar")
   }
 }
+
+protected class PointXY(val xc: Int, val yc: Int) {
+  var x: Int = xc
+  var y: Int = yc
+  def move(dx: Int, dy: Int) {
+    x = x + dx
+    y = y + dy
+    println("Point x location : " + x);
+    println("Point y location : " + y);
+  }
+}
+
+class LocationXY(override val xc: Int, override val yc: Int,
+                 val zc: Int) extends PointXY(xc, yc) {
+  var z: Int = zc
+
+  def move(dx: Int, dy: Int, dz: Int) {
+    x = x + dx
+    y = y + dy
+    z = z + dz
+    println("Point x location : " + x);
+    println("Point y location : " + y);
+    println("Point z location : " + z);
+  }
+}
+
+class AuthorOne(idl: Int, namel: String, locationl: String) {
+  var id: Int = idl
+  var name: String = namel
+  var location: String = locationl
+}
+
 
 
 /*

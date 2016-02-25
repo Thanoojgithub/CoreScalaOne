@@ -26,7 +26,7 @@ object ForExpressionsExceptionHandling {
 
     for (str <- strList if str.equals("scala"); str <- strList if !str.equals("for")) println(str + " " + str)
 
-    val strYield = for (str <- strList) yield str
+    val strYield = for (str <- strList if str.equals("scala") ) yield str
     println(strList + " | " + strYield)
     strYield.foreach { x => println(x) }
 
