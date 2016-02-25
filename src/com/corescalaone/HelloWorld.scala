@@ -9,10 +9,7 @@ object HelloWorld {
     // Not mandatory to call functions inside main()
 
     println("Enter a i value: ")
-    val i = StdIn.readDouble()
-
-    val result = square(i)
-    println("def square :: " + result)
+    val i = StdIn.readDouble
 
     val now = new Date
     val df = getDateInstance(LONG, Locale.ENGLISH)
@@ -36,27 +33,29 @@ object HelloWorld {
   println("Enter an y-coordinate: ")
   val y = StdIn.readDouble()
   println("def multiple :: " + multiple(x, y))
+  println("def square :: " + square(x))
   println("def quadrant :: " + quadrant(x, y))
-  
 
-  /* http://docs.scala-lang.org/tutorials/scala-for-java-programmers.html
+  //Numbers are objects
+  println(1 + 2 * 3 / 4)
+  println((1).+(((2).*(3))./(4)))
+  println(1.+((2.*(3))./(4)))
+
+  /**
+   * http://docs.scala-lang.org/tutorials/scala-for-java-programmers.html
    * http://docs.scala-lang.org/cheatsheets/
    * http://docs.scala-lang.org/glossary/
    * http://docs.scala-lang.org/tutorials/
    * http://docs.scala-lang.org/overviews/
    * http://www.scala-lang.org/api/current/#package
    * http://docs.scala-lang.org/index.html
-   * 
-   * Note: 
+   *
+   *
+   * Note:
    * Everything is an Object
-	 * Scala is a pure object-oriented language in the sense that everything is an object, including numbers or functions. 
-	 * It differs from Java in that respect, since Java distinguishes primitive types (such as boolean and int) from reference types, and does not enable one to manipulate functions as values. 
+   * Scala is a pure object-oriented language in the sense that everything is an object, including numbers or functions.
+   * It differs from Java in that respect, since Java distinguishes primitive types (such as boolean and int) from reference types, and does not enable one to manipulate functions as values.
    */
-
-  //Numbers are objects
-  println(1 + 2 * 3 / 4)
-  println((1).+(((2).*(3))./(4)))
-  println(1.+((2.*(3))./(4)))
 
 }
 
