@@ -94,3 +94,117 @@ object Author {
 
 
 
+
+
+/*
+
+OUTPUT:
+------
+
+OK
+5 shatrughna ayodhya
+6 hanuma kishkinda
+7 sriram ayodhya
+1 sriram ayodhya
+2 seeta midhila
+3 lakshman ayodhya
+4 bharatha ayodhya
+-----------------authorList.sorted-----------------------------------  
+4 bharatha ayodhya
+6 hanuma kishkinda
+3 lakshman ayodhya
+2 seeta midhila
+5 shatrughna ayodhya
+1 sriram ayodhya
+7 sriram ayodhya
+-----------------authorList.reverse----------------------------------  
+4 bharatha ayodhya
+3 lakshman ayodhya
+2 seeta midhila
+1 sriram ayodhya
+7 sriram ayodhya
+6 hanuma kishkinda
+5 shatrughna ayodhya
+-----------------sortWith------_.compareTo(_) < 0--------------------  
+4 bharatha ayodhya
+6 hanuma kishkinda
+3 lakshman ayodhya
+2 seeta midhila
+5 shatrughna ayodhya
+1 sriram ayodhya
+7 sriram ayodhya
+-----------------sortWith------_.compareTo(_) > 0--------------------  
+7 sriram ayodhya
+1 sriram ayodhya
+5 shatrughna ayodhya
+2 seeta midhila
+3 lakshman ayodhya
+6 hanuma kishkinda
+4 bharatha ayodhya
+-----------Author.Ordering.by(e => e.id)--------orderingById----------  
+1 sriram ayodhya
+2 seeta midhila
+3 lakshman ayodhya
+4 bharatha ayodhya
+5 shatrughna ayodhya
+6 hanuma kishkinda
+7 sriram ayodhya
+---------Author.Ordering.by(e => e.name)--------orderingByName--------  
+4 bharatha ayodhya
+6 hanuma kishkinda
+3 lakshman ayodhya
+2 seeta midhila
+5 shatrughna ayodhya
+7 sriram ayodhya
+1 sriram ayodhya
+-----Author.Ordering.by(e => e.location)--------orderingByLocation----  
+5 shatrughna ayodhya
+7 sriram ayodhya
+1 sriram ayodhya
+3 lakshman ayodhya
+4 bharatha ayodhya
+6 hanuma kishkinda
+2 seeta midhila
+-Author.Ordering.by(e => (e.location, e.name, e.id)-orderingByNameThenLocation- 
+4 bharatha ayodhya
+3 lakshman ayodhya
+5 shatrughna ayodhya
+1 sriram ayodhya
+7 sriram ayodhya
+6 hanuma kishkinda
+2 seeta midhila
+-----------------Ordering.by(e => e.id)--------orderingById------------  
+1 sriram ayodhya
+2 seeta midhila
+3 lakshman ayodhya
+4 bharatha ayodhya
+5 shatrughna ayodhya
+6 hanuma kishkinda
+7 sriram ayodhya
+----------------Ordering.by(e => e.name)--------orderingByName----------  
+4 bharatha ayodhya
+6 hanuma kishkinda
+3 lakshman ayodhya
+2 seeta midhila
+5 shatrughna ayodhya
+7 sriram ayodhya
+1 sriram ayodhya
+------------Ordering.by(e => e.location)--------orderingByLocation------  
+5 shatrughna ayodhya
+7 sriram ayodhya
+1 sriram ayodhya
+3 lakshman ayodhya
+4 bharatha ayodhya
+6 hanuma kishkinda
+2 seeta midhila
+--Ordering.by(e => (e.location, e.name, e.id)-orderingByNameThenLocation- 
+4 bharatha ayodhya
+3 lakshman ayodhya
+5 shatrughna ayodhya
+1 sriram ayodhya
+7 sriram ayodhya
+6 hanuma kishkinda
+2 seeta midhila
+
+
+*/

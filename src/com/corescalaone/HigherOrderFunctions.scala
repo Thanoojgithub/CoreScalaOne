@@ -162,3 +162,72 @@ object HigherOrderFunctions {
   }
 
 }
+
+
+/*
+
+OUTPUT:
+------
+[10]
+Inside delayed method
+Getting time in nano seconds
+Param: 873289484787055
+Getting time in nano seconds
+873289484864195
+a & b - 5 & 5
+a & b - 7 & 3
+Hello
+Scala
+world
+Tail recursion - factorialOne : 120
+Tail recursion - factorialTwo : 120
+multiplicationOfXY : 10
+Thu Feb 25 20:11:55 IST 2016 : log4j msg1
+Thu Feb 25 20:11:55 IST 2016 : log4j msg2
+Thu Feb 25 20:11:55 IST 2016 : log4j msg3
+10
+5
+1
+2
+3
+4
+2
+4
+byE1x
+zXolv
+BseIe
+ZSzwo
+mwLAe
+MXtoy
+------capitalize-----
+Bye1x
+Zxolv
+Bseie
+Zszwo
+Mwlae
+Mxtoy
+exists : true
+curriedSumOne : 3
+curriedSumTwo : 3
+i th element is: 10
+i th element is: 9
+i th element is: 8
+i th element is: 7
+i th element is: 6
+i th element is: 5
+i th element is: 4
+i th element is: 3
+i th element is: 2
+i th element is: 1
+i th element is: 10
+i th element is: 9
+i th element is: 8
+i th element is: 7
+i th element is: 6
+i th element is: 5
+i th element is: 4
+i th element is: 3
+i th element is: 2
+i th element is: 1
+
+*/

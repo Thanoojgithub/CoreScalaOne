@@ -54,3 +54,30 @@ object ComparableOne {
  * writer.write("Hello Developer, Welcome to Scala Programming.")
  * writer.close()
  */
+
+
+
+/*
+
+OUTPUT:
+------
+
+OK
+5 shatrughna ayodhya
+6 hanuma kishkinda
+7 sriram ayodhya
+1 sriram ayodhya
+2 seeta midhila
+3 lakshman ayodhya
+4 bharatha ayodhya
+-----------------authorList.sorted-----------------------
+4 bharatha ayodhya
+6 hanuma kishkinda
+3 lakshman ayodhya
+2 seeta midhila
+5 shatrughna ayodhya
+1 sriram ayodhya
+7 sriram ayodhya
+
+
+*/

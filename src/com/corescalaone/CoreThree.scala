@@ -117,3 +117,29 @@ object ArithmaticCaseClass {
   println(matchAny("two"))
 
 }
+
+
+
+/*
+
+OUTPUT:
+------
+
+thin
+Crust type is thick
+Foo
+589431969 == 589431969 || 1252169911 != 2101973421
+PizzaHut
+hello world
+hello
+6
+many
+2
+Summation
+30
+200
+2
+10
+
+
+*/

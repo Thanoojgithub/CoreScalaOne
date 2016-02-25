@@ -90,3 +90,45 @@ object FunctionsClosures {
   tailRecursionTwo(3)
 }
 
+
+/*
+
+OUTPUT:
+------
+20
+15
+hello!
+world!!
+nothing
+tailRecursionOne : 3
+tailRecursionOne : 2
+tailRecursionOne : 1
+Exception : java.lang.Exception: tailRecursion!!
+OK
+tailRecursionTwo : 3
+tailRecursionTwo : 2
+tailRecursionTwo : 1
+1
+2
+3
+4
+5
+OK
+5 shatrughna ayodhya
+6 hanuma kishkinda
+7 sriram ayodhya
+1 sriram ayodhya
+2 seeta midhila
+3 lakshman ayodhya
+4 bharatha ayodhya
+-----------------authorList.sorted-----------------------
+4 bharatha ayodhya
+6 hanuma kishkinda
+3 lakshman ayodhya
+2 seeta midhila
+5 shatrughna ayodhya
+1 sriram ayodhya
+7 sriram ayodhya
+
+
+*/

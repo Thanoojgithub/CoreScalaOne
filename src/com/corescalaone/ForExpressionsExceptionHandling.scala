@@ -94,4 +94,59 @@ object ForExpressionsExceptionHandling {
     }
     authorList
   }
+  
+  
+/*
+
+OUTPUT:
+------
+welcome
+to
+scala
+for
+expressions
+welcome
+to
+scala
+for
+expressions
+welcome
+to
+scala
+for
+expressions
+scala
+scala
+welcome welcome
+to to
+scala scala
+expressions expressions
+List(welcome, to, scala, for, expressions) | List(scala)
+scala
+OK
+5 shatrughna ayodhya
+6 hanuma kishkinda
+7 sriram ayodhya
+1 sriram ayodhya
+2 seeta midhila
+3 lakshman ayodhya
+4 bharatha ayodhya
+welcome
+to
+scala
+for
+expressions
+java.util.stream.ReferencePipeline$Head@4aa298b7
+2334
+java.util.stream.ReferencePipeline$Head@7d4991ad
+234
+java.util.stream.ReferencePipeline$Head@28d93b30
+
+1
+3
+3
+2
+
+
+*/
 }

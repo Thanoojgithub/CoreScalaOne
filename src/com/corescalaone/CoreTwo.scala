@@ -31,7 +31,7 @@ object CoreTwo {
     array = array.sorted
     array.foreach { println }
     //2
-    var randomArray = for (i <- 1 to 5) yield if (i != 3) { Random.nextInt(100) } else 0
+    var randomArray = for (i <- -1 to 5 if ((i != -1))) yield if (i != 3) { Random.nextInt(100) } else 0
     randomArray = randomArray.sorted
 
     randomArray.foreach { println }
@@ -56,9 +56,9 @@ object CoreTwo {
     val nums = arr2.partition(x => x % 2 == 0)
     val evenNums = nums._1
     val oldNum = nums._2
-    println("evenNums : "+evenNums.toList)
-    println("oldNum : "+oldNum.toList)
-    
+    println("evenNums : " + evenNums.toList)
+    println("oldNum : " + oldNum.toList)
+
     println(arr2.foreach { println })
     for (i <- 0 to arr2.length - 1) {
       if (arr2(i) % 2 == 0) evenListOne.:+=(arr2(i)) else oddListOne.:+=(arr2(i))
@@ -104,6 +104,7 @@ object CoreTwo {
     println(finalTupleOfab.toMap)
 
     //Class and Companions
+    println("6. Create a class called Connection( connectionId, url, port). How will you ensure that you will not create more than 10 connection objects?");
     Connection.connCount = 2
     Connection(1, "google.com", 25)
     Connection(2, "yahoo.com", 26)
@@ -118,9 +119,7 @@ object CoreTwo {
   /**
    * 6. Create a class called Connection( connectionId, url, port). How will you ensure that you will not create more than 10 connection objects?
    */
-  println("6. Create a class called Connection( connectionId, url, port). How will you ensure that you will not create more than 10 connection objects?");
   class Connection(connectionId: Int, url: String, port: Long) {
-
     override def toString = connectionId + ", " + url + ", " + port + " - " + this.hashCode
   }
   object Connection {
@@ -137,7 +136,7 @@ object CoreTwo {
     }
   }
 
-  println("7. Print the list of files in a directory using cmd/shell")
+  //println("7. Print the list of files in a directory using cmd/shell")
 
   /**
    * I have used shell commands in Linux with scala
@@ -214,4 +213,81 @@ object CoreTwo {
    * NOTE: http://rosettacode.org/wiki/Execute_a_system_command#Scala
    */
 
+  
+  
+  /*
+
+OUTPUT:
+------
+1. Create an array of random numbers and print them it in a sorted order
+4
+8
+5
+2
+0
+0
+2
+4
+5
+8
+0
+12
+35
+46
+68
+96
+13
+51
+52
+63
+97
+2. Print list of even numbers and odd numbers from an array
+evenNums : List(18)
+oldNum : List(21, 51, 79, 91)
+18
+21
+51
+79
+91
+()
+18
+()
+21
+51
+79
+91
+()
+3. Write a function that takes an Int array input and swaps adjacent pairs of elements. Use for loop and yield
+13
+51
+52
+63
+97
+swaps adjacent pairs of elements in an array: 
+51
+13
+63
+52
+97
+51
+13
+63
+52
+97
+4. Function that returns a tuple of minimum and maximum values of an array
+minMaxTuple : (18,91)
+MIN : 18 | MAX : 91
+5. If a = Array(1,2,3,4) and b = Array(“a”, “b”, “c”, “d”) generate the following output ((1,”a”),(2,”b”),(3,”c”),(4, “d”)) and convert it to map
+List((1,a), (2,b), (3,c), (4,d))
+Map(1 -> a, 2 -> b, 3 -> c, 4 -> d)
+6. Create a class called Connection( connectionId, url, port). How will you ensure that you will not create more than 10 connection objects?
+2
+1, google.com, 25 - 356573597
+2, yahoo.com, 26 - 1735600054
+0
+
+
+
+
+*/
 }

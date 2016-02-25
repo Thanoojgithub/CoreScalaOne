@@ -136,14 +136,21 @@ Elephant - Mammal
 Turtle - Reptile
 Elephant - Mammal
 Turtle - Reptile
-Animal Locally
+AnimalLocalMR extends Mammal with Reptile
 Animal Locally MR
 reptileLocally
-Animal Locally
+AnimalLocalMR extends Mammal with Reptile
+Animal Locally MR
+reptileLocally
+AnimalLocalRM extends Reptile with Mammal
 Animal Locally RM
 mammalLocally
 Hello, foo!
 Hello, bar!
+Point x location : 20
+Point y location : 30
+Point z location : 20
+
 
 */
 

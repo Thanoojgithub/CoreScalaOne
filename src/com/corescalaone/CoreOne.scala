@@ -61,28 +61,27 @@ object CoreOne {
     println(ptThree)
     ptThree.move(10, 10)
     println(ptThree)
-    
-    
+
     // List - scala.collection.immutable.List
-   // listOperations()
+    listOperations()
 
     //Set - scala.collection.immutable.Set
-    //setOperations()
+    setOperations()
 
     // Map - collection.mutable.Map
-   // mapOperations()
+    mapOperations()
 
     val vectorOne = for (i <- 1 to 5) yield i
     println(vectorOne)
     val vectorTwo = for (e <- vectorOne) yield e
     println(vectorTwo)
-    
+
     def adder(m: Int, n: Int) = m + n
-    println(adder(10,20))
+    println(adder(10, 20))
     //Partial application
-    val addPartial = adder(2, _:Int)
+    val addPartial = adder(2, _: Int)
     println(addPartial(20))
-    
+
   }
 
   /**
@@ -275,22 +274,30 @@ class Point(xc: Int, yc: Int) {
   override def toString(): String = "(" + x + ", " + y + ")";
 }
 
-
 /**
  * Singleton Object -
  * Methods and values that aren’t associated with individual instances of a class belong in singleton objects, denoted by using the keyword object instead of class.
  * This sum method is available globally, and can be referred to, or imported, as com.corescalaone.SumOfList.
  */
 object SumOfList {
-def sum(list: List[Int]): Int = list.sum
+  def sum(list: List[Int]): Int = list.sum
 }
 
 
 
 /*
-OUTPUT
+
+OUTPUT:
+------
 
 CoreOne!
+123
+3
+blue
+yellow
+red
+Range(10, 13, 16, 19)
+List(10, 13, 16, 19)
 (1, 2)
 (11, 12)
 (1, 0)
@@ -371,7 +378,10 @@ Some(10)
 Map(x -> 10, y -> 11, z -> 12)
 Map(x -> 10, y -> 11, z -> 12)
 Map()
-
+Vector(1, 2, 3, 4, 5)
+Vector(1, 2, 3, 4, 5)
+30
+22
 
 
 */

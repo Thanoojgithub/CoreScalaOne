@@ -43,3 +43,25 @@ class StarCruiser(mp: Int, cp: Int) extends PulseEngine {
   val maxPulse = mp
   var currentPulse = cp
 }
+
+
+/*
+
+OUTPUT:
+------
+inside engage
+inside loop engage
+inside speedUp 100
+inside if speedUp
+inside loop engage
+inside speedUp 100
+inside if speedUp
+inside loop engage
+inside speedUp 100
+inside if speedUp
+engage loop for 3 times
+inside speedUp 100
+inside if speedUp
+4
+
+*/

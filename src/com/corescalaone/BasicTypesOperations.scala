@@ -36,3 +36,20 @@ object BasicTypesOperations {
       Boolean 	scala.runtime.RichBoolean
       String 	scala.collection.immutable.StringOps
 */
+
+/*
+
+OUTPUT:
+------
+
+12345
+12345
+1.2345678901234567
+1.2345678901234567
+12345
+x
+true
+true
+12345
+
+*/
