@@ -1,0 +1,59 @@
+<!-- collection of books - author based -->
+<book>
+	<author name="Kathy Sierra">
+		<publisher name="Head First labs">
+			<paperback title="Head First Java, Second Edition" cost="600">
+				<description link="http://www.headfirstlabs.com/books/hfjava/">
+					Head First Java, Second Edition
+				</description>
+			</paperback>
+			<paperback title="Head First EJB" cost="500">
+				<description link="http://www.headfirstlabs.com/books/hfejb/">
+					Head First EJB with RMI
+				</description>
+			</paperback>
+			<paperback title="Head First C#, 3rd Edition" cost="560">
+				<description link="http://shop.oreilly.com/product/0636920027812.do">
+					Head First C# is a complete learning
+					experience for learning how to program with C#, XAML,
+					the .NET
+					Framework, and Visual Studio.
+				</description>
+			</paperback>
+			<paperback title="Head First Design Patterns" cost="660">
+				<description link="http://www.headfirstlabs.com/books/hfdp/">
+					Head First Design Patterns - best
+					practices and experience
+				</description>
+			</paperback>
+		</publisher>
+	</author>
+	<author name="Kathy Sierra Two">
+		<publisher name="Head First labs Two">
+			<paperback title="Head First Java, Second Edition Two" cost="600">
+				<description link="http://www.headfirstlabs.com/books/hfjava/ Two">
+					Head First Java, Second Edition - Two
+				</description>
+			</paperback>
+			<paperback title="Head First EJB Two" cost="500">
+				<description link="http://www.headfirstlabs.com/books/hfejb/ Two">
+					Head First EJB with RMI - Two
+				</description>
+			</paperback>
+			<paperback title="Head First C#, 3rd Edition Two" cost="560">
+				<description link="http://shop.oreilly.com/product/0636920027812.do Two">
+					Head First C# is a complete learning
+					experience for learning how to program with C#, XAML,
+					the .NET
+					Framework, and Visual Studio. - Two
+				</description>
+			</paperback>
+			<paperback title="Head First Design Patterns Two" cost="660">
+				<description link="http://www.headfirstlabs.com/books/hfdp/ Two">
+					Head First Design Patterns - best
+					practices and experience - Two
+				</description>
+			</paperback>
+		</publisher>
+	</author>
+</book>
