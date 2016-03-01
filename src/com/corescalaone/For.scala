@@ -11,7 +11,7 @@ import java.io.InputStreamReader
 import scala.util.control.Breaks._
 import java.io._
 
-object ForExpressionsExceptionHandling {
+object For {
   def main(args: Array[String]): Unit = {
 
     //1. ForExpressions
