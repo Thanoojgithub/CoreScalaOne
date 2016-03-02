@@ -5,7 +5,7 @@ import scala.collection.mutable.ListBuffer
 object XMLTestOne extends App {
 
   import scala.xml._
-  val bookElem = XML.loadFile("D:\\thanooj\\work\\Workspaces\\WSscala\\WSOne\\CoreScalaNew\\resources\\book.xml")
+  val bookElem = XML.loadFile("D:\\thanooj\\work\\Workspaces\\WSscala\\WSTwo\\Scalacore\\src\\resources\\book.xml")
   var bookAuthors: ListBuffer[BookAuthor] = new ListBuffer[BookAuthor]
   var bookAuthor: BookAuthor = null;
   var descriptions: ListBuffer[String] = null;
@@ -57,6 +57,7 @@ class BookAuthor {
 
 
 /*
+ Note : add 'scala-xml-2.11.0-M4.jar'
 
 OUTPUT:
 -------

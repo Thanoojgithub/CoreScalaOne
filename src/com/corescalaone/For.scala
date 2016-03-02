@@ -26,13 +26,13 @@ object For {
 
     for (str <- strList if str.equals("scala"); str <- strList if !str.equals("for")) println(str + " " + str)
 
-    val strYield = for (str <- strList if str.equals("scala") ) yield str
+    val strYield = for (str <- strList if str.equals("scala")) yield str
     println(strList + " | " + strYield)
     strYield.foreach { x => println(x) }
 
     //2. ExceptionHandling
-    val afile: java.io.File = new File("D:/thanooj/work/Workspaces/WSscala/WSOne/CoreScalaNew/resources/Authors.csv")
-    val authorList = loadAuthorsFromFile(afile)
+    val source: BufferedReader = Source.fromURL(getClass.getResource("Authors.csv")).bufferedReader()
+    val authorList = loadAuthorsFromFile(source)
     authorList.foreach { println }
 
     //3. Match expressions
@@ -71,17 +71,23 @@ object For {
     val aValTwo = 2;
     {
       val aValTwo = 3; { // Compiles just fine
-        println(aValTwo)//3
+        println(aValTwo) //3
       }
-      println(aValTwo)//3
+      println(aValTwo) //3
     }
-    println(aValTwo)//2
+    println(aValTwo) //2
 
+    def validateName(name: String): Option[String] = {
+      if (name.isEmpty) None
+      else Some(name)
+    }
+
+    validateName("ram")
   }
-  def loadAuthorsFromFile(afile: java.io.File): MutableList[Author] = {
+  def loadAuthorsFromFile(source: BufferedReader): MutableList[Author] = {
     var authorList: MutableList[Author] = MutableList[Author]()
     try {
-      for (line <- Source.fromFile(afile).getLines()) {
+      for (line <- Iterator.continually(source.readLine()).takeWhile(_ != null)) {
         val authorArr = line.split(",")
         val author: Author = new Author(authorArr(0).toInt, authorArr(1), authorArr(2))
         authorList += author
@@ -94,9 +100,9 @@ object For {
     }
     authorList
   }
-  
-  
-/*
+}
+
+  /*
 
 OUTPUT:
 ------
@@ -149,4 +155,3 @@ java.util.stream.ReferencePipeline$Head@28d93b30
 
 
 */
-}

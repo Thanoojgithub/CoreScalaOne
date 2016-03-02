@@ -3,9 +3,10 @@ package com.corescalaone
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.IOException
-
 import scala.collection.mutable.MutableList
 import scala.io.Source
+import java.io.FileReader
+import java.io.BufferedReader
 
 object FunctionsClosures {
 
@@ -15,19 +16,19 @@ object FunctionsClosures {
     val strList = "1 2 3 0 4 5".split(" ").toList
     strList.filter(_ != "0").foreach { x => println(x) }
 
-    val afile: java.io.File = new File("D:/thanooj/work/Workspaces/WSscala/WSOne/CoreScalaNew/resources/Authors.csv")
+    val source: BufferedReader = Source.fromURL(getClass.getResource("Authors.csv")).bufferedReader()
 
-    val authorList = loadAuthorsFromFile(afile)
+    val authorList = loadAuthorsFromFile(source)
     authorList.foreach { println }
     println("-----------------authorList.sorted-----------------------")
     authorList.sorted.foreach { println }
   }
 
   //2. First-class functions - function definition inside function
-  def loadAuthorsFromFile(afile: java.io.File): MutableList[Author] = {
+  def loadAuthorsFromFile(source: BufferedReader): MutableList[Author] = {
     var authorList: MutableList[Author] = MutableList[Author]()
     try {
-      for (line <- Source.fromFile(afile).getLines()) {
+      for (line <- Iterator.continually(source.readLine()).takeWhile(_ != null)) {
         val authorArr = line.split(",")
         val author: Author = new Author(authorArr(0).toInt, authorArr(1), authorArr(2))
         authorList += author
