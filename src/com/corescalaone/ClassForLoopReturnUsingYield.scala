@@ -28,3 +28,14 @@ class People (val addr : Address ) {
 class Address (val c : String ) {
   var city : String = c
 }
+
+
+/*
+RUN:
+~>scalac HelloWorld.scala
+
+~>scala HelloWorld
+Hello, world!
+Ayodhya
+
+~>
